@@ -56,10 +56,10 @@ def generate():
 @app.route('/', methods=['GET', 'POST'])
 def index():
     global acc, new, switch, camera, capture
-    new=''
-    switch = 0
-    capture = 0
-    acc=0
+    # new=''
+    # switch = 0
+    # capture = 0
+    # acc=0
     if request.method == 'GET':
         return render_template('index.html', data=new, acc=acc, text=new)
     if request.method == 'POST':
@@ -76,23 +76,6 @@ def index():
                     return render_template('index.html',text=new, data=new, acc=acc)
             else:
                 return render_template('index.html', data='', acc="select the correct language")
-        # elif request.form.get('stop') == 'Stop/Start':
-                
-        #     if(switch==1):
-        #         switch=0
-        #         camera.release()
-        #         cv2.destroyAllWindows()
-        #         return redirect('/')
-                
-        #     else:
-        #         camera = cv2.VideoCapture(0)
-        #         switch=1
-        #         return redirect('/')
-
-        # elif request.form.get('click') == 'Capture':
-        #     lang = request.form['language']
-        #     capture=1
-        #     return render_template('index.html', data=new, acc=acc, text=new)
         elif request.form.get('Clear') == 'Clear':
             return redirect('/')
         else:
@@ -133,4 +116,4 @@ def video():
         mimetype="multipart/x-mixed-replace; boundary=frame")
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
