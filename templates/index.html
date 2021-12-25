@@ -1,0 +1,266 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Translate</title>
+    <link href="https://fonts.googleapis.com/css2?family=Licorice&family=Pushster&display=swap" rel="stylesheet">
+    <link rel="stylesheet"  type="text/css" href="{{url_for('static', filename='style.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="nav">
+        <div>Translate</div>
+    </div>
+    <div class="container">
+    <div class="row">
+        <div style="height: 90vh;"  class="first col-md my-auto"> 
+            <div>  
+                <p id="quote">A different language is a different vision of life."
+                    <br><span id="author">-Rita Mae Brown</span> </p>
+            </div>
+            <div>
+                <div class="stupid">
+                <form method="POST" action="/request">   
+                    <button type="submit" name="stop" value="Stop/Start" class="btn btn-outline-danger">Camera</button>
+                </form>
+                <form action="/" method="post">
+                    <button name='Clear' class="btn btn-outline-danger" value="Clear" type="submit">Process</button>
+                </form>
+                </div>
+            <!-- <h6>if text is not displayed kindly refresh the page</h6> -->
+                <br>
+                <form action="/" method='POST' enctype='multipart/form-data'>
+                    <div class="mb-3">
+                        <input name='file1' class="form-control" type="file" id="formFile" required>
+                    </div>
+                    <p class="light">upload image to get better accuracy</p>
+                    <div class="row">
+                        <select class="col m-3 form-select" name="cars" id="cars">
+                            <option value="en">English</option>
+                            <option value="hi">Hindi</option>
+                            <option value="abq">Abaza</option>
+                            <option value="ady">Adyghe</option>
+                            <option value="af">Afrikaans</option>
+                            <option value="ang">Angika</option>
+                            <option value="ar">Arabic</option>
+                            <option value="as">Assamese</option>
+                            <option value="ava">Avar</option>
+                            <option value="az">Azerbaijani</option>
+                            <option value="be">Belarusian</option>
+                            <option value="bg">Bulgarian</option>
+                            <option value="bh">Bihari</option>
+                            <option value="bho">Bhojpuri</option>
+                            <option value="bn">Bengali</option>
+                            <option value="bs">Bosnian</option>
+                            <option value="ch_sim">Simplified Chinese</option>
+                            <option value="ch_tra">Traditional Chinese</option>
+                            <option value="che">Chechen</option>
+                            <option value="cs">Czech</option>
+                            <option value="cy">Welsh</option>
+                            <option value="hi">Danish</option>
+                            <option value="opel">Dargwa</option>
+                            <option value="audi">German</option>
+                            <option value="en">Spanish</option>
+                            <option value="hi">Estonian</option>
+                            <option value="opel">Persian (Farsi)</option>
+                            <option value="audi">French</option>
+                            <option value="audi">Irish</option>
+                            <option value="audi">Goan Konkani</option>
+                            <option value="audi">Croatian</option>
+                            <option value="audi">Hungarian</option>
+                            <option value="audi">Indonesian</option>
+                            <option value="audi">Ingush</option>
+                            <option value="audi">Icelandic</option>
+                            <option value="audi">Italian</option>
+                            <option value="audi">Japanese</option>
+                            <option value="audi">Kabardian</option>
+                            <option value="audi">Kannada</option>
+                            <option value="audi">Korean</option>
+                            <option value="audi">Kurdish</option>
+                            <option value="audi">Latin</option>
+                            <option value="audi">Lak</option>
+                            <option value="audi">Lezghian</option>
+                            <option value="audi">Lithuanian</option>
+                            <option value="audi">Latvian</option>
+                            <option value="audi">Magahi	</option>
+                            <option value="audi">Maithili</option>
+                            <option value="audi">Maori</option>
+                            <option value="audi">Mongolian</option>
+                            <option value="audi">Marathi</option>
+                            <option value="audi">Malay</option>
+                            <option value="audi">Maltese</option>
+                            <option value="audi">Nepali</option>
+                            <option value="audi">Newari</option>
+                            <option value="audi">Dutch</option>
+                            <option value="audi">Norwegian</option>
+                            <option value="audi">Occitan</option>
+                            <option value="audi">Pali</option>
+                            <option value="audi">Polish</option>
+                            <option value="audi">Portuguese</option>
+                            <option value="audi">Romanian</option>
+                            <option value="audi">Russian</option>
+                            <option value="audi">Serbian (cyrillic)</option>
+                            <option value="audi">Serbian (latin)</option>
+                            <option value="audi">Nagpuri</option>
+                            <option value="audi">Slovak</option>
+                            <option value="audi">Slovenian</option>
+                            <option value="audi">Albanian</option>
+                            <option value="audi">Swedish</option>
+                            <option value="audi">Swahili</option>
+                            <option value="audi">Tamil</option>
+                            <option value="audi">Tabassaran</option>
+                            <option value="audi">Telugu</option>
+                            <option value="audi">Thai</option>
+                            <option value="audi">Tajik</option>
+                            <option value="audi">Tagalog</option>
+                            <option value="audi">Turkish</option>
+                            <option value="audi">Uyghur</option>
+                            <option value="audi">Ukranian</option>
+                            <option value="audi">Urdu</option>
+                            <option value="audi">Uzbek</option>
+                            <option value="audi">Vietnamese</option>
+                        </select>
+                        <button type="submit" name="btn" class="col m-3 btn btn-outline-danger">Process</button>
+                    </div>
+                </form>
+
+                <div>TEXT : {{text}}</div>
+                <p>accuracy : {{acc}}%</p>
+                <p class="light">reload the page if text is not available</p>
+                <form action="/" method="post">
+                    <button name='Clear' class="btn btn-outline-danger" value="Clear" type="submit">Clear Page</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-md">
+            <p>Enter text to translate</p>
+            <form action="/" method="POST">
+                <div class="input-group">
+                    <textarea class="form-control" style="resize: none;" name="text" class="row" cols="30" rows="9">{{data}}</textarea>
+                </div>
+                <div class="row">
+                    <select class="col m-3 form-select" name="trans" id="trans">
+                        <option value="af">afrikaans</option>
+                        <option value="sq">albanian</option>
+                        <option value="am">amharic</option>
+                        <option value="ar">arabic</option>
+                        <option value="hy">armenian</option>
+                        <option value="az">azerbaijani</option>
+                        <option value="eu">basque</option>
+                        <option value="be">belarusian</option>
+                        <option value="bn">bengali</option>
+                        <option value="bs">bosnian</option>
+                        <option value="bg">bulgarian</option>
+                        <option value="ca">catalan</option>
+                        <option value="ceb">cebuano</option>
+                        <option value="ny">chichewa</option>
+                        <option value="zh-cn">chinese (simplified)</option>
+                        <option value="zh-tw">chinese (traditional)</option>
+                        <option value="co">corsican</option>
+                        <option value="hr">croatian</option>
+                        <option value="cs">czech</option>
+                        <option value="da">danish</option>
+                        <option value="nl">dutch</option>
+                        <option value="en">english</option>
+                        <option value="eo">estonian</option>
+                        <option value="et">estonian</option>
+                        <option value="tl">filipino</option>
+                        <option value="fi">finnish</option>
+                        <option value="fr">french</option>
+                        <option value="fy">frisian</option>
+                        <option value="gl">galician</option>
+                        <option value="ka">georgian</option>
+                        <option value="de">german</option>
+                        <option value="el">greek</option>
+                        <option value="gu">gujarati</option>
+                        <option value="ht">haitian creole</option>
+                        <option value="ha">hausa</option>
+                        <option value="haw">hawaiian</option>
+                        <option value="iw">hebrew</option>
+                        <option value="he">hebrew</option>
+                        <option value="hi">hindi</option>
+                        <option value="hmn">hmong</option>
+                        <option value="hu">hungarian</option>
+                        <option value="is">icelandic</option>
+                        <option value="ig">igbo</option>
+                        <option value="id">indonesian</option>
+                        <option value="ga">irish</option>
+                        <option value="it">italian</option>
+                        <option value="ja">japanese</option>
+                        <option value="jw">javanese</option>
+                        <option value="kn">kannada</option>
+                        <option value="kk">kazakh</option>
+                        <option value="km">khmer</option>
+                        <option value="ko">korean</option>
+                        <option value="ku">kurdish (kurmanji)</option>
+                        <option value="ky">kyrgyz</option>
+                        <option value="lo">lao</option>
+                        <option value="la">latin</option>
+                        <option value="lv">latvian</option>
+                        <option value="lt">lithuanian</option>
+                        <option value="lb">luxembourgish</option>
+                        <option value="mk">macedonian</option>
+                        <option value="mg">malagasy</option>
+                        <option value="ms">malay</option>
+                        <option value="ml">malayalam</option>
+                        <option value="mt">maltese</option>
+                        <option value="mi">maori</option>
+                        <option value="mr">marathi</option>
+                        <option value="mn">mongolian</option>
+                        <option value="my">myanmar (burmese)</option>
+                        <option value="ne">nepali</option>
+                        <option value="no">norwegian</option>
+                        <option value="or">odia</option>
+                        <option value="ps">pashto</option>
+                        <option value="fa">persian</option>
+                        <option value="pl">polish</option>
+                        <option value="pt">portuguese</option>
+                        <option value="pa">punjabi</option>
+                        <option value="ro">romanian</option>
+                        <option value="ru">russian</option>
+                        <option value="sm">samoan</option>
+                        <option value="gd">scots gaelic</option>
+                        <option value="sr">serbian</option>
+                        <option value="st">sesotho</option>
+                        <option value="sn">shona</option>
+                        <option value="sd">sindhi</option>
+                        <option value="si">sinhala</option>
+                        <option value="sk">slovak</option>
+                        <option value="sl">slovenian</option>
+                        <option value="so">somali</option>
+                        <option value="es">spanish</option>
+                        <option value="su">sundanese</option>
+                        <option value="sw">swahili</option>
+                        <option value="sv">swedish</option>
+                        <option value="tg">tajik</option>
+                        <option value="ta">tamil</option>
+                        <option value="te">telugu</option>
+                        <option value="th">thai</option>
+                        <option value="tr">turkish</option>
+                        <option value="uk">ukrainian</option>
+                        <option value="ur">urdu</option>
+                        <option value="ug">uyghur</option>
+                        <option value="uz">uzbek</option>
+                        <option value="vi">vietnamese</option>
+                        <option value="cy">welsh</option>
+                        <option value="xh">xhosa</option>
+                        <option value="yi">yiddish</option>
+                        <option value="yo">yoruba</option>
+                        <option value="zu">zulu</option>
+                    </select>
+                    <button type="submit" class="col m-3 btn btn-outline-danger">Translate</button>
+                </div>
+                <div class="input-group">
+                    <textarea disabled class="form-control" style="resize: none;" name="text2" class="row" cols="30" rows="9">{{translated}}</textarea>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>  
+</body>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</html>
